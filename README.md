@@ -3,7 +3,7 @@
 # 🏏 SupeRR Selector · Season 2
 
 ### Who performs best under pressure?
-**A ball-by-ball study of 200,999 IPL deliveries to find the top 10 batters and top 10 bowlers when the match is on the line.**
+**A ball-by-ball study of 200,000 IPL deliveries to find the top 10 batters and top 10 bowlers when the match is on the line.**
 
 [![Live dashboard](https://img.shields.io/badge/▶_Live_dashboard-pinkcity--pressure--lab-EA1A85?style=for-the-badge)](https://pinkcity-pressure-lab.vercel.app/)
 [![Summary notebook](https://img.shields.io/badge/Notebook-summary_of_findings-254AA5?style=for-the-badge&logo=jupyter&logoColor=white)](notebooks/SupeRR_Selector_Summary.ipynb)
@@ -23,6 +23,7 @@
 | **Read the story in charts** (descriptive, diagnostic, predictive, prescriptive) | [`notebooks/SupeRR_Selector_Summary.ipynb`](notebooks/SupeRR_Selector_Summary.ipynb) |
 | **Read the full method, assumptions and checks** | [`docs/`](docs/) (methodology PDF) |
 | **Reproduce the numbers from raw data** | [How to reproduce](#-how-to-reproduce) |
+| **Run the method on your own data** (IPL, domestic, uncapped players) | [`pressure-rating-toolkit/`](pressure-rating-toolkit/) |
 
 ---
 
@@ -129,8 +130,13 @@ Full detail, with every assumption and the checks we ran, is in the methodology 
 │   └── (methodology report PDF)
 ├── dashboard/
 │   └── index.html                         # the single-file dashboard, as deployed
-└── pipeline/
-    └── (cleaning, models, ratings and simulation code)
+├── pipeline/
+│   └── (the project notebooks: cleaning, models, ratings and simulation)
+└── pressure-rating-toolkit/
+    ├── pressure_rating.py                 # the whole method in ONE file, for your own datasets
+    ├── requirements.txt
+    ├── template.csv                       # the columns your data needs
+    └── README.md                          # how to use it
 ```
 
 ## 🔁 How to reproduce
@@ -151,6 +157,21 @@ Run all cells (*Kernel → Restart & Run All*). The notebook reads `data/pressur
 Place the ball-by-ball file where the pipeline README in `pipeline/` says, then run the scripts in the order listed there. Typical requirements: Python 3.10+, `pandas`, `numpy`, `lightgbm`, `scikit-learn`, `pyarrow`.
 
 **Dashboard locally.** Open `dashboard/index.html` in any browser. It is one self-contained file.
+
+## 🛠️ Run it on your own data
+
+Want to rate players in a different tournament, such as a domestic league or an uncapped-player competition? The [`pressure-rating-toolkit/`](pressure-rating-toolkit/) folder holds the whole method as **one Python file**.
+
+```bash
+cd pressure-rating-toolkit
+pip install -r requirements.txt
+python pressure_rating.py --template                   # shows the columns your data needs
+python pressure_rating.py --input my_balls.csv --out results/
+```
+
+You get ratings with 80% intervals, each player's chance of a true top 10, tiers, the 2-of-4-cutoffs shortlist, and a diagnostics file with model quality and checks. On this project's own IPL data it finds the same 40,193 pressure balls and agrees with the published lists on 8 of 10 batters and 8 of 10 bowlers.
+
+Two things to keep in mind: the models are **retrained on your data**, and ratings are **comparable only within one dataset**, because opposition strength differs between leagues. See the [toolkit README](pressure-rating-toolkit/README.md) for the full guide.
 
 ## ⚠️ Limits worth knowing
 
