@@ -1,2 +1,3 @@
 # SupeRR-Selector-Season-2
 Ball-by-ball pressure ratings for IPL and T20I batters and bowlers. Win-probability and leverage models identify pressure balls, then rate players above par with CIs and a 2-of-4 robustness rule. Built for the Rajasthan Royals SupeRR Selector, Season 2, Round 1.
+This repository holds the full analysis behind our SupeRR Selector Round 1 submission: data cleaning, the win-probability, leverage and par models, the pressure-ball definition, the player rating with shrinkage and 80% CIs, the 2-of-4 stress test, and the Rajasthan Royals gap diagnosis. Notebooks are numbered in pipeline order, and each saves its outputs for the next one to read. The interactive dashboard and the methodology report are included alongside the code.
