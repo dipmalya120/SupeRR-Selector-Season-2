@@ -3,7 +3,7 @@
 # 🏏 SupeRR Selector · Season 2
 
 ### Who performs best under pressure?
-**A ball-by-ball study of 200,000 IPL deliveries to find the top 10 batters and top 10 bowlers when the match is on the line.**
+**A ball-by-ball study of 200,999 IPL deliveries to find the top 10 batters and top 10 bowlers when the match is on the line.**
 
 [![Live dashboard](https://img.shields.io/badge/▶_Live_dashboard-pinkcity--pressure--lab-EA1A85?style=for-the-badge)](https://pinkcity-pressure-lab.vercel.app/)
 [![Summary notebook](https://img.shields.io/badge/Notebook-summary_of_findings-254AA5?style=for-the-badge&logo=jupyter&logoColor=white)](notebooks/SupeRR_Selector_Summary.ipynb)
