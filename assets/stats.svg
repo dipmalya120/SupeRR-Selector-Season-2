@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="150" viewBox="0 0 1280 150" role="img" aria-label="Key figures: 200,961 deliveries analysed, 40,193 pressure balls, 867 matches, top 10 batters and top 10 bowlers">
+  <style>
+    .n{font-family:Helvetica,Arial,sans-serif;font-size:40px;font-weight:700}
+    .l{font-family:Helvetica,Arial,sans-serif;font-size:17px;fill:#4a5068}
+  </style>
+  <g>
+    <rect x="0" y="0" width="302" height="150" rx="12" fill="#FCE3F0"/><rect x="0" y="0" width="6" height="150" rx="3" fill="#EA1A85"/>
+    <text class="n" x="28" y="70" fill="#EA1A85">200,961</text><text class="l" x="28" y="106">deliveries analysed</text>
+    <rect x="326" y="0" width="302" height="150" rx="12" fill="#E3EAF8"/><rect x="326" y="0" width="6" height="150" rx="3" fill="#254AA5"/>
+    <text class="n" x="354" y="70" fill="#254AA5">40,193</text><text class="l" x="354" y="106">pressure balls (top 20%)</text>
+    <rect x="652" y="0" width="302" height="150" rx="12" fill="#FCE3F0"/><rect x="652" y="0" width="6" height="150" rx="3" fill="#EA1A85"/>
+    <text class="n" x="680" y="70" fill="#EA1A85">867</text><text class="l" x="680" y="106">matches</text>
+    <rect x="978" y="0" width="302" height="150" rx="12" fill="#E3EAF8"/><rect x="978" y="0" width="6" height="150" rx="3" fill="#254AA5"/>
+    <text class="n" x="1006" y="70" fill="#254AA5">10 + 10</text><text class="l" x="1006" y="106">batters and bowlers selected</text>
+  </g>
+</svg>
