@@ -1,37 +1,36 @@
-<div align="center">
+<p align="center">
+  <img src="assets/banner.svg" alt="SupeRR Selector, Season 2: who performs best under pressure?" width="100%">
+</p>
 
-# 🏏 SupeRR Selector · Season 2
+<p align="center">
+  <a href="https://pinkcity-pressure-lab.vercel.app/"><img src="https://img.shields.io/badge/LIVE_DASHBOARD-pinkcity--pressure--lab-EA1A85?style=for-the-badge" alt="Live dashboard"></a>
+  <a href="notebooks/SupeRR_Selector_Summary.ipynb"><img src="https://img.shields.io/badge/SUMMARY_NOTEBOOK-findings_in_charts-254AA5?style=for-the-badge" alt="Summary notebook"></a>
+  <a href="pressure-rating-toolkit/"><img src="https://img.shields.io/badge/TOOLKIT-run_on_your_data-1B2340?style=for-the-badge" alt="Toolkit"></a>
+</p>
 
-### Who performs best under pressure?
-**A ball-by-ball study of 200,999 IPL deliveries to find the top 10 batters and top 10 bowlers when the match is on the line.**
-
-[![Live dashboard](https://img.shields.io/badge/▶_Live_dashboard-pinkcity--pressure--lab-EA1A85?style=for-the-badge)](https://pinkcity-pressure-lab.vercel.app/)
-[![Summary notebook](https://img.shields.io/badge/Notebook-summary_of_findings-254AA5?style=for-the-badge&logo=jupyter&logoColor=white)](notebooks/SupeRR_Selector_Summary.ipynb)
-[![Methodology](https://img.shields.io/badge/PDF-methodology_report-1B2340?style=for-the-badge)](docs/)
-
-*Rajasthan Royals SupeRR Selector, Season 2 (Unstop) · Round 1*
-
-</div>
+<p align="center">
+  <img src="assets/stats.svg" alt="Key figures" width="100%">
+</p>
 
 ---
 
-## 👀 Start here
+## Start here
 
 | If you want to… | Go to |
 |---|---|
-| **Explore the results interactively** (rankings, head-to-head, simulations, Royals gaps) | 👉 **[pinkcity-pressure-lab.vercel.app](https://pinkcity-pressure-lab.vercel.app/)** |
+| **Explore the results interactively** (rankings, head-to-head, simulations, Royals gaps) | **[pinkcity-pressure-lab.vercel.app](https://pinkcity-pressure-lab.vercel.app/)** |
 | **Read the story in charts** (descriptive, diagnostic, predictive, prescriptive) | [`notebooks/SupeRR_Selector_Summary.ipynb`](notebooks/SupeRR_Selector_Summary.ipynb) |
 | **Read the full method, assumptions and checks** | [`docs/`](docs/) (methodology PDF) |
-| **Reproduce the numbers from raw data** | [How to reproduce](#-how-to-reproduce) |
+| **Reproduce the numbers from raw data** | [How to reproduce](#how-to-reproduce) |
 | **Run the method on your own data** (IPL, domestic, uncapped players) | [`pressure-rating-toolkit/`](pressure-rating-toolkit/) |
 
 ---
 
-## 🎯 The question
+## The question
 
 Cricket averages treat every ball the same. A single off the first ball of the innings and a single off the last ball of a tight chase carry the same weight in a strike rate, but they are not the same moment. Round 1 asks a sharper question: **who delivers when it matters most?**
 
-## 💡 The idea in one minute
+## The idea in one minute
 
 1. **Leverage.** For every ball, estimate how far it can swing the chance of winning. The average ball is scaled to 1.00; a last-over ball with the game level can be worth 10 to 20 times that.
 2. **Pressure ball.** The top 20% of balls by leverage *and* the player's own side is not cruising (batting side's win chance of 60% or less; for the bowler, 40% or more). If the game is already decided, nobody is being tested.
@@ -39,7 +38,7 @@ Cricket averages treat every ball the same. A single off the first ball of the i
 4. **Honest uncertainty.** Ratings are shrunk toward the average for small samples. Every player gets an 80% interval and a **chance of being a true top 10** from 4,000 simulated re-draws.
 5. **Robust selection.** A player must be top 10 under **at least 2 of 4** definitions of pressure (top 15, 20, 25 and 30% of balls), so the list does not hinge on one arbitrary cut-off.
 
-## 🏆 The results
+## The results
 
 ### Top 10 batters
 *Rating = runs above par per 100 pressure balls.*
@@ -77,7 +76,7 @@ Reserve: **Jos Buttler**.
 
 > **How to read the tables.** Tier A: more than a 60% chance of being a true top 10. Tier B: 30 to 60%. Tier C: below 30%. Order inside Tiers B and C is soft because pressure balls are a small sample; the intervals show that openly. **Top 10 in** counts how many of the four pressure cut-offs put the player in the top 10; a final pick needs at least two.
 
-## 🔍 What we found
+## What we found
 
 - **Pressure is concentrated.** The top 20% of balls carry **42.8%** of all win-chance movement, 2.1× their fair share. About **93%** of pressure balls occur in the chase.
 - **A wicket is not a wicket.** An early wicket costs a batting side about **4×** a death-over wicket, so wickets are priced by phase, not flat.
@@ -85,7 +84,7 @@ Reserve: **Jos Buttler**.
 - **The lists are robust.** 5 batters and 6 bowlers are top 10 under all four pressure definitions; every other pick passes at least two.
 - **Rajasthan Royals' clearest pressure gap is middle-overs batting** (about −5.5 runs per 100 balls, worst against pace), with a smaller gap in middle-overs bowling. The dashboard and notebook show which picks do their pressure work in those overs.
 
-## 🧭 Explore the dashboard
+## Explore the dashboard
 
 The **[live dashboard](https://pinkcity-pressure-lab.vercel.app/)** is a single interactive page with nine tabs:
 
@@ -101,7 +100,7 @@ The **[live dashboard](https://pinkcity-pressure-lab.vercel.app/)** is a single 
 | **RR gaps** | See where Royals sit below the league, and who fills the gap |
 | **Method** | Read the full flowchart, assumptions and checks, and find the code |
 
-## 🧪 Method at a glance
+## Method at a glance
 
 ```
 Ball-by-ball data ─► Clean & validate ─► Win-probability model ─► Leverage index
@@ -117,11 +116,14 @@ Ball-by-ball data ─► Clean & validate ─► Win-probability model ─► Le
 
 Full detail, with every assumption and the checks we ran, is in the methodology report and the Method tab of the dashboard.
 
-## 📁 Repository structure
+## Repository structure
 
 ```
 .
 ├── README.md
+├── assets/
+│   ├── banner.svg                         # README header graphic
+│   └── stats.svg                          # README key-figures graphic
 ├── notebooks/
 │   └── SupeRR_Selector_Summary.ipynb      # the story in charts (start here)
 ├── data/
@@ -139,7 +141,7 @@ Full detail, with every assumption and the checks we ran, is in the methodology 
     └── README.md                          # how to use it
 ```
 
-## 🔁 How to reproduce
+## How to reproduce
 
 **Summary notebook (fast, no raw data needed)**
 
@@ -158,7 +160,7 @@ Place the ball-by-ball file where the pipeline README in `pipeline/` says, then 
 
 **Dashboard locally.** Open `dashboard/index.html` in any browser. It is one self-contained file.
 
-## 🛠️ Run it on your own data
+## Run it on your own data
 
 Want to rate players in a different tournament, such as a domestic league or an uncapped-player competition? The [`pressure-rating-toolkit/`](pressure-rating-toolkit/) folder holds the whole method as **one Python file**.
 
@@ -173,18 +175,18 @@ You get ratings with 80% intervals, each player's chance of a true top 10, tiers
 
 Two things to keep in mind: the models are **retrained on your data**, and ratings are **comparable only within one dataset**, because opposition strength differs between leagues. See the [toolkit README](pressure-rating-toolkit/README.md) for the full guide.
 
-## ⚠️ Limits worth knowing
+## Limits worth knowing
 
 - Pressure balls are a small slice of the data, so intervals are wide and the order inside Tiers B and C is soft. In the simulation, about five of ten names in each list land in the true top 10; the rest are close neighbours.
 - The win-probability model is strong in chases but weaker in the first innings.
 - Ratings are **descriptive**: they say who has handled pressure best in this data, not who will be best next season or at what auction price.
 - Eligibility thresholds, the 60/40 win-chance filter and the 2-of-4 rule are our choices; the robustness checks show how much they matter.
 
-## 🙏 Data and credits
+## Data and credits
 
 Built for the Rajasthan Royals SupeRR Selector, Season 2, hosted on Unstop. Ball-by-ball IPL data as supplied for the competition. Team names and colours are used only to identify teams in an analytical context; this project is not affiliated with or endorsed by the Rajasthan Royals or the IPL.
 
-## 👤 Author
+## Author
 
 **Dipmalya Chakraborty** · [GitHub @dipmalya120](https://github.com/dipmalya120)
 
