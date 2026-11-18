@@ -8,9 +8,6 @@
   <a href="pressure-rating-toolkit/"><img src="https://img.shields.io/badge/TOOLKIT-run_on_your_data-1B2340?style=for-the-badge" alt="Toolkit"></a>
 </p>
 
-<p align="center">
-  <img src="assets/stats.svg" alt="Key figures" width="100%">
-</p>
 
 ---
 
